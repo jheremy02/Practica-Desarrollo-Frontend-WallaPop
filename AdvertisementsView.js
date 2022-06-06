@@ -1,9 +1,8 @@
 
 export function buildAdvertisementItem(advertisement) {
     let advertisementTemplate = `
-    <div class="advertisement-item">
     <div class="card" style="width: 18rem;">
-        <img src="${advertisement.image_url}" class="card-img-top" alt="...">
+        <img width='100px' height='100px' src="${advertisement.image_url}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">${advertisement.name}</h5>
           <h6 >Description</h6>
@@ -15,6 +14,7 @@ export function buildAdvertisementItem(advertisement) {
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
-    </div>
     `
+
+    return advertisementTemplate
 }
