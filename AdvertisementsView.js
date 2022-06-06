@@ -18,3 +18,17 @@ export function buildAdvertisementItem(advertisement) {
 
     return advertisementTemplate
 }
+
+
+export function buildTweetListSpinnerView() {
+
+  return `
+
+  <div class="loader">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  </div> `
+
+}

@@ -1,10 +1,14 @@
-
-import { buildAdvertisementItem } from "./AdvertisementsView.js";
+import AdvertisementsService from "./AdvertisementsService.js";
+import { buildAdvertisementItem,buildTweetListSpinnerView } from "./AdvertisementsView.js";
 
 document.addEventListener('DOMContentLoaded',async ()=>{
     const advertisementSectionElement= document.querySelector('.advertisements-section')
     const advertisementContainer=document.createElement('div')
     advertisementContainer.className="advertisements-container"
+
+    const spinnerTemplate = buildTweetListSpinnerView()
+
+    advertisementSectionElement.innerHTML=spinnerTemplate
 
     fetch('http://localhost:8000/api/advertisements')
         .then(data=>{
@@ -20,7 +24,10 @@ document.addEventListener('DOMContentLoaded',async ()=>{
             });
             
             advertisementSectionElement.append(advertisementContainer)
+            const loader=advertisementSectionElement.querySelector('.loader');
+            loader.remove()
         })
 
-
+        
+    
 })
