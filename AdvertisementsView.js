@@ -20,7 +20,7 @@ export function buildAdvertisementItem(advertisement) {
 }
 
 
-export function buildTweetListSpinnerView() {
+export function buildAdvertisementsSpinnerView() {
 
   return `
 
