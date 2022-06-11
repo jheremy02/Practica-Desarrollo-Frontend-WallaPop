@@ -11,7 +11,7 @@ export function buildAdvertisementItem(advertisement) {
           <p>${advertisement.price}</p>
           <h6>Type</h6>
           <p>${advertisement.type}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a href="/advertisementDetail.html?id=${advertisement.id}" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
     `
