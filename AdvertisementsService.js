@@ -16,20 +16,21 @@ export default {
                 })
     },
 
-    async createAdvertisement(body){
+    async createAdvertisement(bodyAdvertisement){
         const body={
-            name: body.name,
-            description: body.description,
-            image_url: body.image_url,
-            price:body.price,
-            type: body.type,
+            name: bodyAdvertisement.name,
+            description: bodyAdvertisement.description,
+            image_url: bodyAdvertisement.image_url,
+            price:bodyAdvertisement.price,
+            type: bodyAdvertisement.type,
         }
 
         const response = await fetch('http://localhost:8000/api/advertisements',{
             method: "POST",
             body: JSON.stringify(body),
             headers: {
-          "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            Authorization: "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiamhleXNvbiIsImlhdCI6MTY1NDkxODc5MSwiZXhwIjoxNjU1MDA1MTkxfQ.QkVc8yj-r6XTShMm-dsabyFLG508p8hpwWYZetKiuzc"
         }})
         
         const data=await response.json()

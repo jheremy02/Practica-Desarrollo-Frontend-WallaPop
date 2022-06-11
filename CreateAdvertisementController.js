@@ -1,3 +1,5 @@
+ import advertisementsService from "./AdvertisementsService.js";
+ 
  export class CreateAdvertisement {
      constructor (createFormElement) {
         this.createFormElement=createFormElement;
@@ -7,7 +9,6 @@
 
      main () {
          this.onAnyInputChanged()
-         this.onSubmitForm()
          this.onSubmitForm()
      }
 
@@ -32,11 +33,23 @@
      }
 
      onSubmitForm() {
-         this.createFormElement.addEventListener('submit',()=>{
+         this.createFormElement.addEventListener('submit',(event)=>{
              event.preventDefault()
              const inputElements=new FormData(this.createFormElement)
-             console.log(inputElements.get('gridRadios'))
+             const name = inputElements.get('inputProductName') ;
+             const description=inputElements.get('inputDescriptionProduct') ;
+             const image_url=inputElements.get('inputImageUrl') ;
+             const price=inputElements.get('inputProductPrice') ;
+             const type=inputElements.get('gridRadios') ;
+             const bodyAdvertisement={name,description,image_url,price,type}
+             
+             this.createAdvertisement(bodyAdvertisement)
          })
+     }
+
+     async createAdvertisement(bodyAdvertisement){
+        await advertisementsService.createAdvertisement(bodyAdvertisement)
+        console.log('anuncio creado')
      }
  }
 
