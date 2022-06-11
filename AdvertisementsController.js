@@ -1,4 +1,4 @@
-import AdvertisementsService from "./AdvertisementsService.js";
+import advertisementsService from "./AdvertisementsService.js";
 import { buildAdvertisementsSpinnerView ,buildAdvertisementItem} from "./AdvertisementsView.js";
 
 export class AdvertisementsController{
@@ -15,7 +15,7 @@ export class AdvertisementsController{
         this.advertisementsElement.innerHTML=spinnerTemplate
 
         try {
-            advertisements=await AdvertisementsService.getAdvertisements()
+            advertisements=await advertisementsService.getAdvertisements()
             const advertisementsContainer= document.createElement('div')
             advertisementsContainer.className='advertisements-container'
             advertisements.forEach(element => {
@@ -42,5 +42,20 @@ export class AdvertisementsController{
             
         })
         */
+    }
+
+    async onSubmitForm(){
+
+        
+    }
+
+    async createAdvertisement(body) {
+
+        try {
+            await advertisementsService.createAdvertisement(body)
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 }
