@@ -36,3 +36,21 @@ header h1 {
 .form-container {
     width: 30%;
 }
+
+
+
+.login-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    height: auto;
+}
+
+.login-container {
+    width: 30%;
+}
