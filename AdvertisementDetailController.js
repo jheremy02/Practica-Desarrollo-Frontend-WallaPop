@@ -1,22 +1,38 @@
 import AdvertisementsService from "./AdvertisementsService.js";
-import { buildAdvertisementItem } from "./AdvertisementsView.js";
-
+import { buildAdvertisementItem ,buildAdvertisementsSpinnerView} from "./AdvertisementsView.js";
+import { pubSub } from "./pubSub.js";
 export class AdvertisementDetailController {
     constructor(advertisementDetailElement){
         this.advertisementDetailElement=advertisementDetailElement
     }
 
     async showAdvertisement (advertisementId) {
-        const advertisement=await AdvertisementsService.getAdvertisement(advertisementId)
+        
+        
+        const spinnerTemplate = buildAdvertisementsSpinnerView()
 
-        console.log(advertisement)
-        const advertisementTemplate=buildAdvertisementItem(advertisement)
+        this.advertisementDetailElement.innerHTML=spinnerTemplate
 
-        const advertisementItem=document.createElement('div')
-        advertisementItem.className="advertisement-item"
-        advertisementItem.innerHTML=advertisementTemplate
+        try {
+            const advertisement=await AdvertisementsService.getAdvertisement(advertisementId)
 
-        this.advertisementDetailElement.appendChild(advertisementItem)
+            const advertisementTemplate=buildAdvertisementItem(advertisement)
 
+            const advertisementItem=document.createElement('div')
+            advertisementItem.className="advertisement-item"
+            advertisementItem.innerHTML=advertisementTemplate
+
+            this.advertisementDetailElement.appendChild(advertisementItem)
+            
+
+        } catch (error) {
+            
+            pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION,error)
+        } finally {
+            const loader=this.advertisementDetailElement.querySelector('.loader');
+            loader.remove()
+        }
+
+        
     } 
 }

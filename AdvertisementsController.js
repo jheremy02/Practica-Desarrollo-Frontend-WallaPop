@@ -1,6 +1,6 @@
 import advertisementsService from "./AdvertisementsService.js";
-import { buildAdvertisementsSpinnerView ,buildAdvertisementItem} from "./AdvertisementsView.js";
-
+import { buildAdvertisementsSpinnerView ,buildAdvertisementItem,buildNotFoundAdvertisementsView} from "./AdvertisementsView.js";
+import { pubSub } from "./pubSub.js";
 export class AdvertisementsController{
     constructor (advertisementsElement){
         this.advertisementsElement=advertisementsElement
@@ -16,6 +16,10 @@ export class AdvertisementsController{
 
         try {
             advertisements=await advertisementsService.getAdvertisements()
+            if (advertisements.length===0) {
+                this.advertisementsElement.innerHTML=buildNotFoundAdvertisementsView()
+            }
+
             const advertisementsContainer= document.createElement('div')
             advertisementsContainer.className='advertisements-container'
             advertisements.forEach(element => {
@@ -28,10 +32,13 @@ export class AdvertisementsController{
             });
             
             this.advertisementsElement.append(advertisementsContainer)
+
+        } catch (error) {
+
+            pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION,error)
+        } finally {
             const loader=this.advertisementsElement.querySelector('.loader');
             loader.remove()
-        } catch (error) {
-            console.log(error)
         }
         
         /*

@@ -32,3 +32,9 @@ export function buildAdvertisementsSpinnerView() {
   </div> `
 
 }
+
+export function buildNotFoundAdvertisementsView() {
+  return `
+    <h1>Ooops!! No hay auncios que mostrar </h1>
+  `
+}
