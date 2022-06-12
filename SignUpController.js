@@ -1,6 +1,6 @@
 
 import { signUpService } from "./SignUpService.js";
-
+import { buildAdvertisementsSpinnerView } from "./AdvertisementsView.js";
 import { pubSub } from "./pubSub.js";
 
 
@@ -78,12 +78,33 @@ export class SignUpController {
       }
 
     async createUser(username, password) {
+        const templateSpinner=buildAdvertisementsSpinnerView()
         try {
             await signUpService.createUser(username,password)
+            this.signUpFormElement.innerHTML=templateSpinner
+            pubSub.publish(pubSub.TOPICS.SHOW_SUCCESS_NOTIFICATION,"Usuario registrado con exito")
+            this.loginUser(username,password)
         } catch (error) {
             pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION,error)
         }
         
+    }
+
+    async loginUser(username,password){
+
+        try {
+            await signUpService.loginUser(username,password)
+            window.location.href='/'
+            
+        } catch (error) {
+            pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION, error);
+        }
+
+    }
+
+    static async  closeSession(){
+        window.localStorage.removeItem('token')
+        window.location.href='/'
     }
 
 }

@@ -45,7 +45,7 @@ class SignUpService {
     }
 
     getLoggedUser(){
-        return localStorage.getItem("jwt") || null
+        return localStorage.getItem("token") || null
       }
 
 }
