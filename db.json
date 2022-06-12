@@ -1,0 +1,266 @@
+{
+  "advertisements": [
+    {
+      "name": "laptop",
+      "description": "descripcionn de laptop",
+      "image_url": "https://periodismodelmotor.com/wp-content/uploads/2020/02/coches-caros-de-mantener-9.jpg",
+      "price": "3000",
+      "type": "venta",
+      "userId": 1,
+      "updatedAt": "2022-06-04T18:37:40.042Z",
+      "id": 1
+    },
+    {
+      "name": "Camaro",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis.",
+      "image_url": "https://images.freeimages.com/images/large-previews/b27/car-wheel-1450362.jpg",
+      "price": "30000",
+      "type": "sell",
+      "userId": 1,
+      "updatedAt": "2022-06-08T16:34:50.067Z",
+      "id": 2
+    },
+    {
+      "name": "Laptop",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis.",
+      "image_url": "https://cdn.pixabay.com/photo/2017/08/21/15/37/laptop-2665794_960_720.jpg",
+      "price": "20000",
+      "type": "sell",
+      "userId": 1,
+      "updatedAt": "2022-06-08T16:52:26.861Z",
+      "id": 3
+    },
+    {
+      "name": "Mobile",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis.",
+      "image_url": "https://cdn.pixabay.com/photo/2014/08/05/10/27/iphone-410311__340.jpg",
+      "price": "20000",
+      "type": "sell",
+      "userId": 1,
+      "updatedAt": "2022-06-08T16:53:34.406Z",
+      "id": 4
+    },
+    {
+      "name": "Mouse",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis.",
+      "image_url": "https://cdn.pixabay.com/photo/2021/05/17/11/02/gamer-6260337_960_720.jpg",
+      "price": "15000",
+      "type": "sell",
+      "userId": 1,
+      "updatedAt": "2022-06-08T16:54:55.718Z",
+      "id": 5
+    },
+    {
+      "name": "Laptop",
+      "description": "Hello world",
+      "image_url": "https://cdn.pixabay.com/photo/2015/09/05/22/33/office-925806__340.jpg",
+      "price": "34000",
+      "type": "buy",
+      "userId": 1,
+      "updatedAt": "2022-06-11T03:48:18.340Z",
+      "id": 6
+    },
+    {
+      "name": "Camiseta de futbol",
+      "description": "hala madrid",
+      "image_url": "https://cdn.pixabay.com/photo/2013/03/03/14/58/fabio-coentrao-89568__340.jpg",
+      "price": "450",
+      "type": "sell",
+      "userId": 7,
+      "updatedAt": "2022-06-12T15:12:22.980Z",
+      "id": 19
+    },
+    {
+      "name": "Mesa",
+      "description": "test",
+      "image_url": "https://cdn.pixabay.com/photo/2014/09/17/20/26/restaurant-449952_960_720.jpg",
+      "price": "5500",
+      "type": "sell",
+      "userId": 7,
+      "updatedAt": "2022-06-12T15:18:41.362Z",
+      "id": 20
+    },
+    {
+      "name": "Mobile",
+      "description": "test",
+      "image_url": "https://cdn.pixabay.com/photo/2016/03/27/19/43/samsung-1283938_960_720.jpg",
+      "price": "777",
+      "type": "buy",
+      "userId": 7,
+      "updatedAt": "2022-06-12T15:22:10.653Z",
+      "id": 21
+    },
+    {
+      "name": "Mobile",
+      "description": "test",
+      "image_url": "https://cdn.pixabay.com/photo/2016/03/27/19/43/samsung-1283938_960_720.jpg",
+      "price": "560",
+      "type": "buy",
+      "userId": 7,
+      "updatedAt": "2022-06-12T15:22:36.165Z",
+      "id": 22
+    },
+    {
+      "name": "Mobile",
+      "description": "test",
+      "image_url": "https://cdn.pixabay.com/photo/2016/03/27/19/43/samsung-1283938_960_720.jpg",
+      "price": "560",
+      "type": "sell",
+      "userId": 7,
+      "updatedAt": "2022-06-12T15:23:30.829Z",
+      "id": 23
+    },
+    {
+      "name": "Mobile",
+      "description": "test3",
+      "image_url": "pubSub.publish(pubSub.TOPICS.SHOW_SUCCESS_NOTIFICATION,\"Anuncio creado con éxito\")",
+      "price": "560",
+      "type": "sell",
+      "userId": 7,
+      "updatedAt": "2022-06-12T15:24:27.044Z",
+      "id": 24
+    },
+    {
+      "name": "Mobile",
+      "description": "test5",
+      "image_url": "https://cdn.pixabay.com/photo/2016/03/27/19/43/samsung-1283938_960_720.jpg",
+      "price": "66",
+      "type": "buy",
+      "userId": 7,
+      "updatedAt": "2022-06-12T15:40:46.871Z",
+      "id": 25
+    },
+    {
+      "name": "Mobile",
+      "description": "test6",
+      "image_url": "https://cdn.pixabay.com/photo/2016/03/27/19/43/samsung-1283938_960_720.jpg",
+      "price": "6600",
+      "type": "sell",
+      "userId": 7,
+      "updatedAt": "2022-06-12T15:41:15.578Z",
+      "id": 26
+    },
+    {
+      "name": "Mobile",
+      "description": "test7",
+      "image_url": "https://cdn.pixabay.com/photo/2016/03/27/19/43/samsung-1283938_960_720.jpg",
+      "price": "66",
+      "type": "buy",
+      "userId": 7,
+      "updatedAt": "2022-06-12T15:41:59.618Z",
+      "id": 27
+    },
+    {
+      "name": "Mobile",
+      "description": "test7",
+      "image_url": "https://cdn.pixabay.com/photo/2016/03/27/19/43/samsung-1283938_960_720.jpg",
+      "price": "7700",
+      "type": "buy",
+      "userId": 7,
+      "updatedAt": "2022-06-12T15:45:02.439Z",
+      "id": 28
+    },
+    {
+      "name": "Mobile",
+      "description": "test7",
+      "image_url": "https://cdn.pixabay.com/photo/2016/03/27/19/43/samsung-1283938_960_720.jpg",
+      "price": "600",
+      "type": "buy",
+      "userId": 7,
+      "updatedAt": "2022-06-12T15:47:45.350Z",
+      "id": 29
+    },
+    {
+      "name": "Mobile",
+      "description": "test8",
+      "image_url": "https://cdn.pixabay.com/photo/2016/03/27/19/43/samsung-1283938_960_720.jpg",
+      "price": "5500",
+      "type": "buy",
+      "userId": 7,
+      "updatedAt": "2022-06-12T16:51:36.682Z",
+      "id": 31
+    },
+    {
+      "name": "Mobile",
+      "description": "test9",
+      "image_url": "https://cdn.pixabay.com/photo/2016/03/27/19/43/samsung-1283938_960_720.jpg",
+      "price": "6600",
+      "type": "buy",
+      "userId": 7,
+      "updatedAt": "2022-06-12T16:54:46.065Z",
+      "id": 32
+    },
+    {
+      "name": "Mobile",
+      "description": "test 20",
+      "image_url": "https://cdn.pixabay.com/photo/2016/03/27/19/43/samsung-1283938_960_720.jpg",
+      "price": "666",
+      "type": "buy",
+      "userId": 5,
+      "updatedAt": "2022-06-12T18:22:11.227Z",
+      "id": 34
+    },
+    {
+      "name": "Mobile",
+      "description": "test12",
+      "image_url": "https://cdn.pixabay.com/photo/2016/03/27/19/43/samsung-1283938_960_720.jpg",
+      "price": "666",
+      "type": "buy",
+      "userId": 9,
+      "updatedAt": "2022-06-12T20:12:57.114Z",
+      "id": 35
+    }
+  ],
+  "users": [
+    {
+      "username": "jheyson",
+      "password": "$2b$10$hDdDLz4deYWKYVbvbRhmk.W6NAI8bUmC7OHS/3eZqzYA4wGe45u1m",
+      "id": 1
+    },
+    {
+      "username": "Zlatan",
+      "password": "$2b$10$4AKawnT8RRIJIFII/R0YIeno2MNa9D3j5ODLwGK8YYSr5qnFUVBGu",
+      "id": 2
+    },
+    {
+      "username": "dw",
+      "password": "$2b$10$4AKawnT8RRIJIFII/R0YIe/irJKn7pVzTIRE0baJPXFislUjj0VkW",
+      "id": 3
+    },
+    {
+      "username": "Hazard",
+      "password": "$2b$10$4AKawnT8RRIJIFII/R0YIeno2MNa9D3j5ODLwGK8YYSr5qnFUVBGu",
+      "id": 4
+    },
+    {
+      "username": "Luka",
+      "password": "$2b$10$4AKawnT8RRIJIFII/R0YIeno2MNa9D3j5ODLwGK8YYSr5qnFUVBGu",
+      "id": 5
+    },
+    {
+      "username": "Lionel",
+      "password": "$2b$10$ga2qYN6250Tw8z0azQGV5O0RL08f29vDvNNK0LjA8R94zSAT2u33K",
+      "id": 6
+    },
+    {
+      "username": "Toni",
+      "password": "$2b$10$ga2qYN6250Tw8z0azQGV5O0RL08f29vDvNNK0LjA8R94zSAT2u33K",
+      "id": 7
+    },
+    {
+      "username": "Bernaardo",
+      "password": "$2b$10$TBiuPvruUzWFh3XIoaQZjOW/UGpKL2rGRintfuFdtEJgL19FJ3EWu",
+      "id": 8
+    },
+    {
+      "username": "Erick",
+      "password": "$2b$10$TBiuPvruUzWFh3XIoaQZjOW/UGpKL2rGRintfuFdtEJgL19FJ3EWu",
+      "id": 9
+    },
+    {
+      "username": "Mateo",
+      "password": "$2b$10$djnKEd5tn5qb3WAyVGtQG.I9DmcRYMHMPChTpFCTtCrh.35w0ysAS",
+      "id": 10
+    }
+  ]
+}
