@@ -1,5 +1,6 @@
  import advertisementsService from "./AdvertisementsService.js";
- 
+ import { pubSub } from "./pubSub.js";
+ import { buildAdvertisementsSpinnerView } from "./AdvertisementsView.js";
  export class CreateAdvertisement {
      constructor (createFormElement) {
         this.createFormElement=createFormElement;
@@ -48,8 +49,18 @@
      }
 
      async createAdvertisement(bodyAdvertisement){
-        await advertisementsService.createAdvertisement(bodyAdvertisement)
-        console.log('anuncio creado')
+        const spinnerTemplate = buildAdvertisementsSpinnerView()
+
+        this.createFormElement.innerHTML=spinnerTemplate
+
+        try {
+            await advertisementsService.createAdvertisement(bodyAdvertisement)
+            pubSub.publish(pubSub.TOPICS.SHOW_SUCCESS_NOTIFICATION,"Anuncio creado con éxito")
+        } catch (error) {
+            pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION,error)
+        } 
+        
+       
      }
  }
 
