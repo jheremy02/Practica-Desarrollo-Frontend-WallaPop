@@ -17,6 +17,9 @@ export class NotificationController {
         pubSub.subscribe(pubSub.TOPICS.SHOW_SUCCESS_NOTIFICATION,(message)=>{
             this.showSuccess(message)
         })
+        pubSub.subscribe(pubSub.TOPICS.DELETE_NOTIFICATION),()=>{
+            this.deleteNotification()
+        }
     }
 
 
@@ -43,5 +46,9 @@ export class NotificationController {
         closeButtonElement.addEventListener('click',(event)=>{
             this.notificationElement.innerHTML=''
         })
+    }
+
+    deleteNotification() {
+        this.notificationElement.innerHTML=''
     }
 }
