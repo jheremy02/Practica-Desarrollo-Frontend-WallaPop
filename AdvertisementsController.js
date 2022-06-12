@@ -1,6 +1,10 @@
 import advertisementsService from "./AdvertisementsService.js";
 import { buildAdvertisementsSpinnerView ,buildAdvertisementItem,buildNotFoundAdvertisementsView} from "./AdvertisementsView.js";
 import { pubSub } from "./pubSub.js";
+import { navigationController } from "./NavigationController.js";
+import { decodeToken } from "./utils/decodeToken.js";
+
+import { signUpService } from "./SignUpService.js";
 export class AdvertisementsController{
     constructor (advertisementsElement){
         this.advertisementsElement=advertisementsElement
@@ -32,7 +36,10 @@ export class AdvertisementsController{
             });
             
             this.advertisementsElement.append(advertisementsContainer)
-
+            pubSub.publish(pubSub.TOPICS.SHOW_SUCCESS_NOTIFICATION,"Anuncios cargados con exito")
+            
+            navigationController.handleButton()
+            
         } catch (error) {
 
             pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION,error)
@@ -51,10 +58,7 @@ export class AdvertisementsController{
         */
     }
 
-    async onSubmitForm(){
-
-        
-    }
+ 
 
     async createAdvertisement(body) {
 
@@ -65,4 +69,7 @@ export class AdvertisementsController{
         }
 
     }
+
+
+
 }

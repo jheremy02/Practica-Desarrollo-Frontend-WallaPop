@@ -1,4 +1,5 @@
 
+import { pubSub } from "./pubSub.js";
 import { signUpService } from "./SignUpService.js";
 
 export class LoginController{
@@ -10,6 +11,7 @@ export class LoginController{
     }
 
     main(){
+        
         this.onAnyInputChanged()
         this.onSubmitForm()
     }
@@ -43,14 +45,16 @@ export class LoginController{
 
              this.loginUser(username,password)
 
+
          })
      }
 
      async loginUser(username,password) {
          try {
             await signUpService.loginUser(username,password)
+            window.location.href='/';
          } catch (error) {
-             console.log(error)
+             pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION,error)
          }
         
      }

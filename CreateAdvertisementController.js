@@ -1,16 +1,25 @@
  import advertisementsService from "./AdvertisementsService.js";
  import { pubSub } from "./pubSub.js";
  import { buildAdvertisementsSpinnerView } from "./AdvertisementsView.js";
+import { signUpService } from "./SignUpService.js";
  export class CreateAdvertisement {
      constructor (createFormElement) {
+         
         this.createFormElement=createFormElement;
+        this.createFormElementClone=this.createFormElement.cloneNode(true)
         this.main()
         
      }
 
      main () {
-         this.onAnyInputChanged()
-         this.onSubmitForm()
+         if (signUpService.getLoggedUser()) {
+            this.onAnyInputChanged()
+            this.onSubmitForm()
+         }else {
+             pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION,"Debe loguearse primero")
+             window.location.href="/"
+         }
+         
      }
 
      onAnyInputChanged () {
@@ -43,19 +52,24 @@
              const price=inputElements.get('inputProductPrice') ;
              const type=inputElements.get('gridRadios') ;
              const bodyAdvertisement={name,description,image_url,price,type}
+
              
              this.createAdvertisement(bodyAdvertisement)
+             
          })
      }
 
      async createAdvertisement(bodyAdvertisement){
         const spinnerTemplate = buildAdvertisementsSpinnerView()
-
+       
         this.createFormElement.innerHTML=spinnerTemplate
 
         try {
             await advertisementsService.createAdvertisement(bodyAdvertisement)
+            this.createFormElement.replaceWith(this.createFormElementClone)
             pubSub.publish(pubSub.TOPICS.SHOW_SUCCESS_NOTIFICATION,"Anuncio creado con éxito")
+            
+            
         } catch (error) {
             pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION,error)
         } 

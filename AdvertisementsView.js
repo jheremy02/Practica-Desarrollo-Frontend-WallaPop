@@ -11,7 +11,7 @@ export function buildAdvertisementItem(advertisement) {
           <p>${advertisement.price}</p>
           <h6>Type</h6>
           <p>${advertisement.type}</p>
-          <a href="/advertisementDetail.html?id=${advertisement.id}" class="btn btn-primary">Go somewhere</a>
+          <a href="/advertisementDetail.html?id=${advertisement.id}" class="btn btn-primary">Ver Detalle</a>
         </div>
       </div>
     `
@@ -38,3 +38,9 @@ export function buildNotFoundAdvertisementsView() {
     <h1>Ooops!! No hay auncios que mostrar </h1>
   `
 }
+
+export function buildDeleteButtonView() {
+  return `<button type="button" class="btn btn-danger">Eliminar</button>`
+}
+
+

@@ -1,3 +1,5 @@
+import { signUpService } from "./SignUpService.js";
+
 export default {
     async getAdvertisements(){
         
@@ -39,6 +41,11 @@ export default {
             throw new Error("No he podido transformar la respuesta a json")
         }
 
+        if (!responseHttp.ok) {
+            
+            throw new Error("Anuncio no encontrado")
+        }
+
         return advertisement
     },
 
@@ -59,7 +66,7 @@ export default {
                 body: JSON.stringify(body),
                 headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiamhleXNvbiIsImlhdCI6MTY1NDkxODc5MSwiZXhwIjoxNjU1MDA1MTkxfQ.QkVc8yj-r6XTShMm-dsabyFLG508p8hpwWYZetKiuzc"
+                Authorization: "Bearer "+`${signUpService.getLoggedUser()}`
             }})
             
         } catch (error) {
@@ -72,5 +79,26 @@ export default {
             throw new Error("No he podido transformar la respuesta a json")
         }
        
+    },
+
+    async deleteAdvertisement (advertisementId) {
+        const url=`http://localhost:8000/api/advertisements/${advertisementId}`
+        let responseHttp;
+        
+        try {
+            responseHttp=await fetch(url,{
+                method:"DELETE",
+                headers: {
+                    Authorization: "Bearer "+ signUpService.getLoggedUser()
+                }
+                })
+        } catch (error) {
+            throw new Error("No he podido borrar por el anuncio")
+        }
+        
+        if (!responseHttp.ok) {
+            
+            throw new Error("Anuncio no encontrado")
+        }
     }
 }
